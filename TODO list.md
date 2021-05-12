@@ -1,4 +1,4 @@
-* [ ] coding ADC protocol for reading soil sensor code
+* [x] coding ADC protocol for reading soil sensor code
 * [ ] simulate and test project on proteus
 * [ ] clean the project
 * [ ] finally commit on git
