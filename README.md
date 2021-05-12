@@ -4,12 +4,14 @@ using ADC to read soil sensor value
 
 # Requaerment
 
-1. arduino uno or nano or every arduino boards based on ATmega 328 borad
+1. arduino uno or nano or every arduino boards based on ATmega 328 microcontroller borad
 2. 3V or 5V DC motor water pomp
 3. soil sensor
 4. 12V or 9V battery or power supply
 5. 5V relay for turning on motor pomp
-6. aquarium pipe or palstic pipe
+6. vero board
+7. male to male jumper wire
+8. aquarium pipe or palstic pipe
 
 # Owner of this project : Sir_Jick
 
