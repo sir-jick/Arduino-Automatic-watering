@@ -6,7 +6,7 @@ pinMode(13, OUTPUT);
 
 void loop(){
 digitalWrite(13, LOW);
-int soil_moisture=analogRead(A0);  // read from analog pin A3
+int soil_moisture=analogRead(A0);  // read from analog pin A0
 
 Serial.print("analog value: ");
 Serial.println(soil_moisture);
