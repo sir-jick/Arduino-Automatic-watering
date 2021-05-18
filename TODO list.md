@@ -5,6 +5,7 @@
 * [ ] send signal to sim800 for SMS
 * [ ] simulate and test project on proteus
 * [ ] clean the project
+* [ ] test project in real time
 * [ ] finally commit on git
 * [ ] finally push on git
 * [ ] send the project to customer
