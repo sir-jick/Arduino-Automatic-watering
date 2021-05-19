@@ -16,6 +16,7 @@
 *.dylib
 *.dll
 *.Hex
+hex/
 
 # Fortran module files
 *.mod
