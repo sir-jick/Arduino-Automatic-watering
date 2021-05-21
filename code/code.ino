@@ -35,6 +35,7 @@ void loop()
     //TODO : send SMS if Supposed to be
     Serial.println("watering");
     digitalWrite(water_pomp_relay , HIGH);
+    delay(500);
   }
-  delay(500);
+  delay(3600*1000); // repeat until every 1 hour
 }
