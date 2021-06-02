@@ -12,6 +12,8 @@ using ADC to read soil sensor value
 6. vero board
 7. male to male jumper wire
 8. aquarium pipe or plastic pipe
+9. Sim800L SMS module
+10. SIMCARD with credit
 
 # Owner of this project : Sir_Jick
 
