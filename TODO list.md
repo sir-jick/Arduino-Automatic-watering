@@ -1,8 +1,8 @@
 * [X] coding ADC protocol for reading soil sensor code
 * [X] comparing ADC to find thirst
 * [X] send 1 signal to relay
-* [ ] send signal to sim800 for SMS
-* [ ] simulate and test project on proteus
+* [X] send signal to sim800 for SMS
+* [X] simulate and test project on proteus
 * [ ] clean the project
 * [ ] test project in real time
 * [ ] finally commit on git
