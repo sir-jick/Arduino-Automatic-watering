@@ -3,7 +3,8 @@
 #define water_pomp_relay 13
 
 //Create software serial object to communicate with SIM800L
-SoftwareSerial mySerial(3, 2); //SIM800L Tx & Rx is connected to Arduino #3 & #2
+SoftwareSerial mySerial(3, 2); 
+//SIM800L Tx & Rx is connected to Arduino #3 & #2
 
 void setup()
 {
@@ -37,7 +38,7 @@ void loop()
   if((soil_moisture>300)&&(soil_moisture<700))
   {
     Serial.println("Humid soil");
-    //TODO : send send_sms if Supposed to be
+    //TODO : send SMS if Supposed to be
     Serial.println("watering");
     send_sms("the system is watering now"); // TODO : change this function with right thing
     digitalWrite(water_pomp_relay , HIGH);
@@ -46,7 +47,7 @@ void loop()
 
   if((soil_moisture>700)&&(soil_moisture<950))
   {
-    //TODO : send send_sms if Supposed to be
+    //TODO : send SMS if Supposed to be
 
     digitalWrite(water_pomp_relay,0);
     send_sms("no need to watering ,I am not thirsty") // TODO : change this function with right thing
