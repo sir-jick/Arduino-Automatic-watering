@@ -2,6 +2,7 @@
 
 #define water_pomp_relay 13
 
+String number = "+989381684220";
 //Create software serial object to communicate with SIM800L
 SoftwareSerial mySerial(3, 2); 
 //SIM800L Tx & Rx is connected to Arduino #3 & #2
@@ -17,7 +18,7 @@ void setup()
   updateSerial();
   mySerial.println("AT+CMGF=1"); // Configuring TEXT mode
   updateSerial();
-  mySerial.println("AT+CMGS="+989381684220"");//change ZZ with country code and xxxxxxxxxxx with phone number to sms
+  mySerial.println("AT+CMGS="+ number); //change ZZ with country code and xxxxxxxxxxx with phone number to sms
   updateSerial();
   mySerial.print("system is ready to use"); //text content
   updateSerial();
@@ -26,7 +27,6 @@ void setup()
 
 void loop()
 {
-  
   int soil_moisture=analogRead(A0);  // read from analog pin A0
   digitalWrite(water_pomp_relay , LOW);
   Serial.print("analog value: ");
@@ -39,7 +39,7 @@ void loop()
     delay(3000);
     if(soil_moisture<30)
     {
-      mySerial.print("the container is out of water, please check the water source"); //text content to send sms
+      mySerial.print("the container is run out , check the water source"); //text content to send sms
       updateSerial();
       mySerial.write(26);
       delay(10000);
@@ -50,7 +50,7 @@ void loop()
   {
     Serial.println("Humid soil");
     Serial.println("watering");
-    mySerial.print("the system is watering now"); //text content to send sms
+    mySerial.println("the system is watering now"); //text content to send sms
     updateSerial();
     mySerial.write(26);
     digitalWrite(water_pomp_relay , HIGH);
@@ -60,11 +60,11 @@ void loop()
   if((soil_moisture>700)&&(soil_moisture<950))
   {
     digitalWrite(water_pomp_relay,0);
-    mySerial.print("no need to watering ,I am not thirsty"); //text content to send sms
+    mySerial.println("no need to watering"); //text content to send sms
     updateSerial();
     mySerial.write(26);
   }
-  delay(3600*1000); // repeat until every 1 hour
+  delay(1000); // TODO : *3600 repeat until every 1 hour
 }
 
 void updateSerial()
