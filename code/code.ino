@@ -20,7 +20,7 @@ void setup()
   updateSerial();
   mySerial.println("AT+CMGS="+ number); //change ZZ with country code and xxxxxxxxxxx with phone number to sms
   updateSerial();
-  mySerial.print("system is ready to use"); //text content
+  mySerial.println("system is ready to use "); //text content
   updateSerial();
   mySerial.write(26);
 }
@@ -74,7 +74,7 @@ void updateSerial()
   {
     mySerial.write(Serial.read());//Forward what Serial received to Software Serial Port
   }
-  while(mySerial.available()) 
+  while(mySerial.available())
   {
     Serial.write(mySerial.read());//Forward what Software Serial received to Serial Port
   }
