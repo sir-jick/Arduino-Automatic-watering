@@ -11,7 +11,7 @@ void setup()
 {
   Serial.begin(9600);
   mySerial.begin(9600);
-  Serial.println("Initializing..."); 
+  // Serial.println("Initializing..."); 
   pinMode(water_pomp_relay , OUTPUT);
   delay(1000);
   mySerial.println("AT"); //Once the handshake test is successful, it will back to OK
@@ -29,12 +29,12 @@ void loop()
 {
   int soil_moisture=analogRead(A0);  // read from analog pin A0
   digitalWrite(water_pomp_relay , LOW);
-  Serial.print("analog value: ");
-  Serial.println(soil_moisture);
+  // Serial.print("analog value: ");
+  // Serial.println(soil_moisture);
 
   if(soil_moisture<30)
   {
-    Serial.println("Dry soil");
+    // Serial.println("Dry soil");
     digitalWrite(water_pomp_relay,HIGH);
     delay(3000);
     if(soil_moisture<30)
@@ -48,8 +48,8 @@ void loop()
 
   if((soil_moisture>300)&&(soil_moisture<700))
   {
-    Serial.println("Humid soil");
-    Serial.println("watering");
+    // Serial.println("Humid soil");
+   // Serial.println("watering");
     mySerial.println("the system is watering now"); //text content to send sms
     updateSerial();
     mySerial.write(26);
