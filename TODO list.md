@@ -5,8 +5,8 @@
 * [X] send signal for check water container
 * [X] send sms for refull water container
 * [X] simulate and test project on proteus
-* [ ] clean the project
-* [ ] test project in real time
-* [ ] finally commit on git
-* [ ] finally push on git
-* [ ] send the project to customer
+* [X] clean the project
+* [X] test project in real time
+* [X] finally commit on git
+* [X] finally push on git
+* [X] send the project to customer
