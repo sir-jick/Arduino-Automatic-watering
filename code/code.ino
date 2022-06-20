@@ -2,7 +2,7 @@
 
 #define water_pomp_relay 10
 
-String number = "+989381684220";
+String number = "+98123456789";
 //Create software serial object to communicate with SIM800L
 SoftwareSerial mySerial(3, 2);
 //SIM800L Tx & Rx is connected to Arduino #3 & #2
@@ -15,13 +15,13 @@ void setup()
   pinMode(water_pomp_relay , OUTPUT);
   delay(1000);
   mySerial.println("AT"); //Once the handshake test is successful, it will back to OK
-  // // updateserial();
+  updateserial();
   mySerial.println("AT+CMGF=1"); // Configuring TEXT mode
-  // updateserial();
+  updateserial();
   mySerial.println("AT+CMGS=" + number); //change ZZ with country code and xxxxxxxxxxx with phone number to sms
-  // updateserial();
+  updateserial();
   mySerial.println("system is ready to use "); //text content
-  // updateserial();
+  updateserial();
   mySerial.write(26);
 }
 
@@ -40,7 +40,7 @@ void loop()
     if (soil_moisture < 30)
     {
       mySerial.print("the container is run out , check the water source"); //text content to send sms
-      // updateserial();
+      updateserial();
       mySerial.write(26);
       delay(10000);
     }
@@ -51,7 +51,7 @@ void loop()
     // Serial.println("Humid soil");
     // Serial.println("watering");
     mySerial.println("the system is watering now"); //text content to send sms
-    // updateserial();
+    updateserial();
     mySerial.write(26);
     digitalWrite(water_pomp_relay , HIGH);
     delay(1500);
@@ -61,10 +61,10 @@ void loop()
   {
     digitalWrite(water_pomp_relay, 0);
     mySerial.println("no need to watering"); //text content to send sms
-    // updateserial();
+    updateserial();
     mySerial.write(26);
   }
-  delay(1000); // TODO : *3600 repeat until every 1 hour
+  delay((1000 * 3600));
 }
 
 void updateserial()
